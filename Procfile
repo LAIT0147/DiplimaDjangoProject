@@ -1,0 +1,1 @@
+web: gunicorn DiplimaDjangoProject.wsgi --log-file -
