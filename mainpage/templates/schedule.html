@@ -1,0 +1,48 @@
+{% load static %}
+<section class="section" id="schedule">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6 offset-lg-3">
+                <div class="section-heading dark-bg">
+                    <h2>Classes <em>Schedule</em></h2>
+                    <img src={% static "images/line-dec.png" %} alt="">
+                    <p>We also have group lessons. Choose the program you want and come at any time that convenient for you!</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="filters">
+                </div>
+            </div>
+            <div class="col-lg-10 offset-lg-1">
+                <div class="schedule-table filtering">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td class="day-time">Traning Type/Week day</td>
+                                <td class="day-time">Monday</td>
+                                <td class="day-time">Tuesday</td>
+                                <td class="day-time">Wednesday</td>
+                                <td class="day-time">Thursday</td>
+                                <td class="day-time">Friday</td>
+                                <td class="day-time">Trainer</td>
+                            </tr>
+                            {% for item in schedule %}
+                            <tr>
+                                <td class="day-time">{{ item.class_name }}</td>
+                                <td class="ts-item show">{{ item.monday }}</td>
+                                <td class="ts-item show">{{ item.tuesday }}</td>
+                                <td class="ts-item show" >{{ item.wednesday }}</td>
+                                <td class="ts-item show">{{ item.thursday }}</td>
+                                <td class="ts-item show">{{ item.friday }}</td>
+                                <td class="ts-item show">{{ item.trainer.name }}</td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,31 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <section class="section">
+        <div class="container">
+            <div class="section-heading">
+                <h3>Contact<b>Us</b></h3>
+            </div>
+            <div class="col-md-10 col-md-offset-1">
+                {% for item in contact_lst %}
+                    <div class="row">
+                        <div class="col-md-3">
+                            <a href="{% url 'manager:update_contactus' pk=item.pk %}">
+                                <button type="button" class="main-button">Close Subject</button>
+                            </a>
+                        </div>
+                        <div class="col-md-3">{{ item.name }}</div>
+                        <div class="col-md-3">{{ item.email }}</div>
+                        <div class="col-md-3">{{ item.subject }}</div>
+                        <div class="col-md-3">{{ item.created_at|date:'d-m-Y' }}</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-9"><p>{{ item.message }}</p></div>
+                    </div>
+                    <br>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

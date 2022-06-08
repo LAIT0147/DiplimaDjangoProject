@@ -1,0 +1,40 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <section class="section" id="schedule">
+        <div class="container">
+            <div class="section-heading text-center dark-bg">
+                <br>
+                <h2>Registration</h2>
+            </div>
+            <div>
+                <div class="section-heading dark-bg">
+                    <div class="row">
+                        <div class="col-lg-6 offset-lg-3" >
+                            <form id="contact" action="" method="post">
+                                {% csrf_token %}
+                                    <fieldset>
+                                        <p><em>Username:</em>  {{ form.username }}</p>
+                                    </fieldset>
+                                    <br>
+                                    <fieldset>
+                                        <p><em>Password:</em>  {{ form.password }}</p>
+                                    </fieldset>
+                                    <br>
+                                    <fieldset>
+                                        <p><em>Confirm Pass:</em> {{ form.password2 }}</p>
+                                    </fieldset>
+                                    <br>
+                                    <fieldset>
+                                        <button type="submit" id="form-submit" class="main-button">Register</button>
+                                    </fieldset>
+                            </form>
+                            <br>
+                            <p>Have as account? You can <a href="/login/" >login</a>!</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

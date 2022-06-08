@@ -1,0 +1,31 @@
+{%  extends 'index.html' %}
+
+{% block content %}
+<main>
+    <!-- ***** Main Banner Area Start ***** -->
+    {% include 'main_banner.html' %}
+    <!-- ***** Main Banner Area End ***** -->
+
+    <!-- ***** Features Item Start ***** -->
+    {% include 'features.html' %}
+    <!-- ***** Features Item End ***** -->
+
+    <!-- ***** Call to Action Start ***** -->
+    {% include 'call_to_action.html' %}
+    <!-- ***** Call to Action End ***** -->
+
+    <!-- ***** Our Classes Start ***** -->
+    {% include 'classes.html' %}
+    <!-- ***** Our Classes End ***** -->
+    
+    {% include 'schedule.html' %}
+
+    <!-- ***** Testimonials Starts ***** -->
+    {% include 'testimonials.html' %}
+    <!-- ***** Testimonials Ends ***** -->
+    
+    <!-- ***** Contact Us Area Starts ***** -->
+    {% include 'contact_us.html'%}
+    <!-- ***** Contact Us Area Ends ***** -->
+    </main>
+{% endblock %}

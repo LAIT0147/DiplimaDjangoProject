@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <section class="section" id="schedule">
+        <div class="container">
+            <div class="section-heading text-center dark-bg">
+                <br>
+                <h2>Congratulations!</h2>
+            </div>
+            <div>
+                <div class="section-heading dark-bg">
+                    <div class="row">
+                        <div class="col-lg-6 offset-lg-3" >
+                            <p>User {{ new_user.username }} successfully registered!</p>
+                            <p><a href="/">To main page</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

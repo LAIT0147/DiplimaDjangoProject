@@ -1,0 +1,30 @@
+{% extends 'index.html' %}
+
+{% block content %}
+    <section class="section">
+        <div class="container">
+            <div class="section-heading">
+                <h3>Edit<b>Programs</b></h3>
+            </div>
+            <div class="col-md-10 col-md-offset-1">
+                {% for item in programs_list %}
+                    <div class="row" >
+                        <div class="col-md-3">
+                            <a href="{% url 'manager:update_program' pk=item.pk %}">
+                                <button type="button" class="main-button">Unlock/Lock program</button>
+                            </a>
+                        </div>
+                        <div class="col-md-3">{{ item.name }}</div>
+                        <div class="col-md-3"><p>Visible: {{ item.is_visible }}</p></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-3"></div>
+                        <div class="col-md-9"><p>Description:{{ item.desc }}</p></div>
+                    </div>
+                    <div class="row"></div>
+                    <br>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}
