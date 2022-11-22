@@ -29,7 +29,7 @@ def registration_view(request):
 
     if form.is_valid():
         new_user = form.save(commit=False)
-        new_user.set_password(['password'])
+        new_user.set_password(form.cleaned_data['password'])
         new_user.save()
         return render(request, 'user_registration_done.html', context={'user': new_user})
     return render(request, 'registration.html', context={'form': form})
